@@ -1,0 +1,780 @@
+html body{
+	padding:0;
+	margin:0;
+	position:relative;
+	font-family: 'Work Sans', sans-serif;
+}
+body a{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+a:hover{
+	text-decoration:none;
+}
+input[type="button"],input[type="submit"],.contact-form input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;	
+}	
+p{
+	margin:0;
+    line-height: 1.8;
+    color: #777;
+    letter-spacing: .5px;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* header */
+/*navbar brand name- Q-IA
+a.navbar-brand {
+    font-size: .8em;
+    color: white;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+}*/
+/*
+a.navbar-brand.logo span.fa {
+    color: #fc636b;
+}*/
+.buttons a {
+    background: #39cc9c;
+    padding: 10px 25px;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+    letter-spacing: .5px;
+    border: 2px solid #39cc9c;
+}
+.buttons a:hover {
+    opacity: .9;
+}
+
+/* CSS Document */
+header {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:relative" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display: inline-block;
+	/*float: left;*/
+	}
+
+/* Styling the links */
+nav a {	
+    text-transform: capitalize;
+	color: #fff;
+    letter-spacing: 1px;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    padding: 0.2rem;
+}
+
+
+nav ul li ul li:hover { background: #f8f9fa; }
+
+nav a:hover {	
+    color: #fff;
+}
+.menu li.active  a{ 
+    color: #fc636b;
+    background: transparent;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 25px; 
+    background: #fff;
+    padding: 10px;
+}
+ul.inner-dropdown a:hover {
+	color: #333;
+}
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* First Tier Dropdown */
+nav ul ul li {
+	width:160px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+nav ul ul li a {
+    color: #333;
+    padding: 5px 10px;
+    display: block;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px;
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 991px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+	nav {
+		margin: 0;
+	}
+	.header-agile{
+		float: left;
+	}
+	nav ul {
+		width: 100%;
+	}
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Styling the toggle lable */
+	.toggle {
+		display: block;
+		padding: 4px 18px;
+		font-size: 20px;
+		text-decoration:none;
+		border:none;
+		float: right;
+		background-color: #39cc9c;
+		color: #fff;
+	}
+	.menu .toggle {
+		float: none;
+		text-align: center;
+		margin: auto;
+		width: 25%;
+		padding: 5px;
+		font-weight: normal;
+		font-size: 15px;
+		letter-spacing: 1px;
+	}
+
+	.toggle:hover {
+		color:#333;
+		background-color: #fff;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+		background: #fff;
+		padding: 15px 0;
+		text-align: center;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		padding: 5px 0;
+	}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: transparent;
+	}
+
+	nav ul li ul li .toggle,
+	nav ul ul a,
+    nav ul ul ul a{
+		padding:14px 20px;
+		color:#FFF;
+		font-size:17px;
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+		padding: 0;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */
+
+	}
+	nav a {
+		color: #333;
+	}
+	nav a:hover {
+		color: #333;
+	}
+	.menu li.active a {
+		color: #333;
+	}
+	nav ul ul li a {
+		display: inline-block;
+		font-size: 15px;
+	}
+	ul.inner-dropdown {
+		padding-bottom: 0 !important;
+		padding-top: 8px !important;
+	}
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+}
+/*-- //header --*/
+
+/*-- banner --*/
+.banner_w3lspvt {
+    background: url(../images/computer.jpg) no-repeat center;
+	background-size: cover;
+    min-height: 49em;
+    position: relative;
+}
+.banner_w3lspvt:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #222;
+}
+
+.banner-tops-style {
+    padding-top: 16em;
+}
+
+.style-banner h3 {
+    font-size: 52px;
+    color: #fff;
+    line-height: 1.3;
+    position: relative;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+}
+.text-li {
+    color: #f8f9fa;
+    letter-spacing: .5px;
+}
+.text-wh {
+    color: #fff;
+}
+.bg-li{
+	background: #f8f9fa;
+}
+.style-banner h3 span {
+    color: #fff;
+}
+
+.button-style {
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+	border: 2px solid #fff;
+    border-radius: 4px;
+}
+a.btn.call {
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+.button-style:hover {
+    color: #fff;
+}
+
+.main-w3pvt {
+    position: relative;
+}
+
+/*-- //banner --*/
+
+
+/*-- banner bottom --*/
+.how-grid h3 {
+    font-size: 23px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    line-height: 32px;
+    color: #333;
+}
+
+.how-icon span.fa,.how-icon1 span.fa,.how-icon2 span.fa,.how-icon3 span.fa,.how-icon4 span.fa,.how-icon5 span.fa {
+    background: #edf3fe;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+}
+
+.how-icon span.fa {
+    background: #30c39e;
+}
+.how-icon1 span.fa {
+    background: #f85a40;
+}
+.how-icon2 span.fa {
+    background: #0389ff;
+}
+.how-icon3 span.fa {
+    background: #f48924;
+}
+.how-icon4 span.fa {
+    background: #00bce4;
+}
+.how-icon5 span.fa {
+    background: #009f4d;
+}
+.shadow {
+    box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	/*-ms-border-radius: 5px;*/
+	/*-o-border-radius: 5px;*/
+    background: #fff;
+    padding: 25px 20px;
+}
+.banner_bottom{
+	background: #f8f9fa;
+	border-radius: 1%;
+}
+/*-- banner bottom --*/
+
+/*-- footer --*/
+footer{
+    background: #292929;
+}
+h2.logo a {
+    font-size: .9em;
+    color: #ccc;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+}
+h2.logo a span.fa {
+    color: #fc636b;
+}
+.left{
+	text-align: left;
+}
+.middle{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+footer p a{
+	color: #999;
+}
+footer p a:hover{
+	color: #39cc9c;
+}
+a.move-top {
+    background: #333;
+    padding: 10px 20px;
+    border-radius: 34px;
+    color: #777;
+    letter-spacing: .5px;
+    font-weight: 500;
+}
+/*-- //footer --*/
+
+/*-- inner banner --*/
+.inner-banner {
+    background: url(../images/computer2.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 18vw;
+    position: relative;
+}
+.inner-banner:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #222;
+}
+/*-- //inner banner --*/
+
+/*-- contact --*/
+form.register-wthree .form-control {
+    background: #eee;
+    font-size: 1em;
+}
+
+textarea {
+	height: 180px;
+	resize: none;
+}
+
+form.register-wthree .form-control {
+    background: #f9f8fa;
+    padding: 15px 15px;
+    border: none;
+    border-left: 5px solid #eee;
+    -webkit-box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+    -moz-box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+    box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+}
+/*button styling */
+button.btn-aasana-w3 {
+    background: #39cc9c;
+    color: #ffffff;
+    padding: 11px;
+    letter-spacing: 1px;
+}
+
+
+/*-- Responsive Design --*/
+
+@media(max-width:1440px) {
+	.banner_w3lspvt {
+		min-height: 45em;
+	}
+}
+@media(max-width:1366px) {
+	.banner-tops-style {
+		padding-top: 15em;
+	}
+}
+@media(max-width:1080px) {
+	.banner-tops-style {
+		padding-top: 13em;
+	}
+	.banner_w3lspvt {
+		min-height: 42em;
+	}
+	.style-banner h3 {
+		font-size: 47px;
+	}
+	.how-grid h3 {
+		font-size: 21px;
+	}
+}
+/*@media(max-width:1024px) {*/
+	/*!*.brands a span.fa {*!*/
+		/*!*font-size: 50px;*!*/
+	/*!*}*!*/
+/*}*/
+@media(max-width:991px) {
+	.text p {
+		width: 100%;
+	}
+	.text h5 {
+		font-size: 27px;
+	}
+	h3.heading {
+		font-size: 40px;
+	}
+	.header {
+		position: relative;
+	}
+	.buttons {
+		text-align: center;
+		position: absolute;
+		right: 9%;
+		top: 0%;
+	}
+	.buttons a {
+		padding: 9px 20px;
+		font-size: 15px;
+	}
+	.inner-banner {
+		min-height: 27vw;
+	}
+}
+@media(max-width:768px) {
+	.style-banner h3 {
+		font-size: 42px;
+		line-height: 1.2;
+	}
+	.banner_w3lspvt {
+		min-height: 38em;
+	}
+	.banner-tops-style {
+		padding-top: 12em;
+	}
+	h3.heading {
+		font-size: 37px;
+	}
+}
+@media(max-width:736px) {
+	.banner-tops-style {
+		padding-top: 10em;
+	}
+	.left {
+		text-align: center;
+	}
+	.right {
+		text-align: center;
+		margin-top: 15px;
+	}
+	.buttons a {
+		font-size: 14px;
+	}
+	.buttons {
+		right: 12%;
+	}
+	textarea {
+		height: 150px;
+	}
+}
+@media(max-width:568px) {
+	.banner_w3lspvt {
+		min-height: 35em;
+	}
+	.section_header {
+		width: 65%;
+		margin: auto;
+	}
+}
+@media(max-width:480px) {
+	.style-banner h3 {
+		font-size: 37px;
+	}
+	.banner_w3lspvt {
+		min-height: 37em;
+	}
+	a.navbar-brand {
+		font-size: .7em;
+	}
+	.menu .toggle {
+		width: 35%;
+	}
+	.buttons {
+		right: 14%;
+	}
+	.inner-banner {
+		min-height: 32vw;
+	}
+	h4.about-left-agile {
+		font-size: 20px;
+	}
+	textarea {
+		height: 120px;
+	}
+}
+@media(max-width:414px) {
+	.style-banner h3 {
+		font-size: 34px;
+	}
+	.text-li {
+		font-size: 15px;
+	}
+	h3.heading {
+		font-size: 32px;
+	}
+	p {
+		font-size: 15px;
+	}
+	.text h5 {
+		font-size: 24px;
+	}
+	a.work {
+		padding: 10px 15px;
+	}
+	.text p {
+		margin: 20px auto;
+	}
+	.buttons {
+		right: 16%;
+	}
+	/*.about_right h4 {*/
+		/*font-size: 20px;*/
+	/*}*/
+	/*.popup {*/
+		/*margin: 8em 1em;*/
+		/*padding: 2em 1em;*/
+	/*}*/
+}
+@media(max-width:384px) {
+	.text-li {
+		font-size: 14px;
+	}
+	.banner-tops-style {
+		padding-top: 9em;
+	}
+	.button-style {
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+	a.btn.call {
+		font-size: 16px;
+	}
+	.section_header {
+		width: 75%;
+	}
+	.how-icon span.fa, .how-icon1 span.fa, .how-icon2 span.fa, .how-icon3 span.fa, .how-icon4 span.fa, .how-icon5 span.fa {
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		font-size: 15px;
+	}
+	.brands a span.fa {
+		font-size: 40px;
+	}
+	.banner_w3lspvt {
+		min-height: 35em;
+	}
+	.style-banner h3 {
+		font-size: 30px;
+	}
+	/*.about-grids h5 {*/
+		/*font-size: 18px;*/
+	/*}*/
+	.buttons {
+		right: 17%;
+	}
+	.inner-banner {
+		min-height: 37vw;
+	}
+}
+@media(max-width:375px) {
+	/*.about-grids h5 {*/
+		/*font-size: 18px;*/
+	/*}*/
+	ul.team-social li a span.fa {
+		font-size: 13px;
+	}
+	.text h5 {
+		line-height: 30px;
+		font-size: 22px;
+	}
+	/*.blog h4 {*/
+		/*font-size: 20px;*/
+		/*line-height: 24px;*/
+	/*}*/
+	.toggle {
+		padding: 3px 15px;
+		font-size: 19px;
+	}
+	a.navbar-brand {
+		font-size: .6em;
+	}
+	.buttons a {
+		padding: 10px 20px;
+	}
+	.buttons a {
+		padding: 7px 20px;
+	}
+}
+@media(max-width:1366px) {
+}
+/*-- //Responsive Design --*/
